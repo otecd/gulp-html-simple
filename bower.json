@@ -11,10 +11,10 @@
     "html"
   ],
   "license": "MIT",
-  "homepage": "https://######.###",
+  "homepage": "https://github.com/papadima/gulp-html-simple",
   "repository": {
     "type": "git",
-    "url": "git://github.com/###/###.git"
+    "url": "git@github.com:papadima/gulp-html-simple.git"
   },
   "ignore": [
     "**/.*",
