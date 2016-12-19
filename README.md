@@ -1,7 +1,5 @@
 # README #
 
-# html template
+# module template
 - gulp
-- sass
-- rigger
 - IE8+
