@@ -1,0 +1,5 @@
+
+src/libs/*
+bld/
+node_modules/
+.DS_Store

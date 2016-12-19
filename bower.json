@@ -1,0 +1,34 @@
+{
+  "name": "gulp-html-simple-template",
+  "authors": [
+    "<idimzz@gmail.com> (https://github.com/papadima)"
+  ],
+  "description": "Blank template for module with gulp, babel, IE8+ compatibility.",
+  "main": [
+    "src/index.html"
+  ],
+  "keywords": [
+    "html"
+  ],
+  "license": "MIT",
+  "homepage": "https://######.###",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/###/###.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": false,
+  "dependencies": {
+    "es5-shim": "^4.5.9",
+    "html5shiv": "^3.7.3",
+    "respond": "^1.4.2",
+    "pie-htc": "^1.0.0",
+    "ExplorerCanvas": "excanvas#*"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "gulp-html-simple",
+  "version": "1.0.0",
+  "description": "blank template for html project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "template"
+  ],
+  "author": "https://github.com/papadima",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-latest": "^6.16.0",
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-newer": "^1.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
