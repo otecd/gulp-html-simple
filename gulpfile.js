@@ -1,8 +1,8 @@
 'use strict';
 
 var gulp = require('gulp'),
+    concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
     newer = require('gulp-newer'),
     del = require('del'),
     babel = require('gulp-babel'),
@@ -27,8 +27,23 @@ var gulp = require('gulp'),
                 '!src/js/isolated/**/*'
             ],
             jsIsolated: 'src/js/isolated/**/*.js',
+            jsLtIE9: [
+                'src/libs/es5-shim/es5-shim.min.js',
+                'src/libs/es5-shim/es5-sham.min.js',
+                'src/libs/html5shiv/dist/html5shiv.min.js',
+                'src/libs/html5shiv/dist/html5shiv-printshiv.min.js',
+                'src/libs/respond/dest/respond.min.js',
+                'src/libs/ExplorerCanvas/excanvas.js'
+            ],
             cssIsolated: 'src/css/isolated/**/*.css',
-            libs: 'src/libs/**/*.*'
+            libs: [
+                'src/libs/**/*.*',
+                '!src/libs/README.md',
+                '!src/libs/es5-shim/**/*',
+                '!src/libs/html5shiv/**/*',
+                '!src/libs/respond/**/*',
+                '!src/libs/ExplorerCanvas/**/*'
+            ]
         },
         watch: {
             html: [
@@ -66,8 +81,15 @@ function buildHtml() {
 function buildJs() {
     return gulp.src(path.source.js)
         .pipe(babel())
-        // .pipe(uglify())
-        .pipe(rename({suffix: '.min', prefix : ''}))
+        .pipe(uglify())
+        .pipe(concat('ur-module.min.js')) // change basename to your project's name
+        .pipe(gulp.dest(path.build.js))
+        .pipe(reload({stream: true}));
+}
+
+function buildJsLtIE(verNum) {
+    return gulp.src(path.source['jsLtIE'+verNum])
+        .pipe(concat('ltIE'+verNum+'.min.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 }
@@ -86,6 +108,7 @@ gulp.task('cleanBuild', function() {
 gulp.task('build', ['cleanBuild'], function () {
     buildNewer(path.source.libs, path.build.libs);
     buildJs();
+    buildJsLtIE(9);
     buildNewer(path.source.jsIsolated, path.build.js);
     buildNewer(path.source.cssIsolated, path.build.css);
     buildHtml();
