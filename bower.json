@@ -5,10 +5,10 @@
   ],
   "description": "Blank template for module with gulp, babel, IE8+ compatibility.",
   "main": [
-    "src/index.html"
+    "bld/ur-module.js"
   ],
   "keywords": [
-    "html"
+    "js"
   ],
   "license": "MIT",
   "homepage": "https://github.com/papadima/gulp-html-simple",
@@ -21,10 +21,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "bower.json",
+    "gulpfile.js",
+    "package.json",
+    "README.md"
   ],
   "private": false,
-  "dependencies": {
+  "devDependencies": {
     "es5-shim": "^4.5.9",
     "html5shiv": "^3.7.3",
     "respond": "^1.4.2",
