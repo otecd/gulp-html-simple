@@ -64,10 +64,15 @@ function buildHtml() {
 }
 
 function buildJs() {
+    var nm = 'ur-module'; // change it to your project's name
+    gulp.src(path.source.js)
+        .pipe(babel())
+        .pipe(concat(nm+'.js'))
+        .pipe(gulp.dest(path.build.js))
     return gulp.src(path.source.js)
         .pipe(babel())
         .pipe(uglify())
-        .pipe(concat('ur-module.min.js')) // change basename to your project's name
+        .pipe(concat(nm+'.min.js'))
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 }
