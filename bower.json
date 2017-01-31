@@ -5,7 +5,7 @@
   ],
   "description": "Blank template for module with gulp, babel, IE8+ compatibility.",
   "main": [
-    "bld/ur-module.js"
+    "bld/js/ur-module.js"
   ],
   "keywords": [
     "js"
