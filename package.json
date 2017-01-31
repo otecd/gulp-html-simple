@@ -1,6 +1,6 @@
 {
   "name": "gulp-html-simple",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "blank template for html project",
   "main": "gulpfile.js",
   "scripts": {
