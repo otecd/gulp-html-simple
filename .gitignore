@@ -1,5 +1,5 @@
 
 src/libs/*
-bld/
+bld/libs/*
 node_modules/
 .DS_Store
